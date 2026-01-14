@@ -1,0 +1,77 @@
+:root {
+    --bg-url: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1964&auto=format&fit=crop');
+    --calc-bg: rgba(30, 30, 30, 0.75);
+    --display-bg: rgba(0, 0, 0, 0.3);
+    --text-color: #ffffff;
+    --btn-bg: rgba(255, 255, 255, 0.1);
+    --btn-hover: rgba(255, 255, 255, 0.2);
+}
+
+.light-mode {
+    --bg-url: url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=2070&auto=format&fit=crop');
+    --calc-bg: rgba(255, 255, 255, 0.8);
+    --display-bg: rgba(255, 255, 255, 0.5);
+    --text-color: #222;
+    --btn-bg: rgba(0, 0, 0, 0.05);
+    --btn-hover: rgba(0, 0, 0, 0.1);
+}
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: var(--bg-url) no-repeat center center/cover;
+    font-family: 'Inter', sans-serif;
+    transition: 0.5s;
+}
+
+#calculator {
+    background: var(--calc-bg);
+    backdrop-filter: blur(15px); /* Buzlu cam efekti */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    width: 350px;
+    padding: 25px;
+    box-shadow: 0 25px 45px rgba(0,0,0,0.2);
+}
+
+#display {
+    width: 100%;
+    height: 100px;
+    font-size: 3rem;
+    text-align: right;
+    border: none;
+    outline: none;
+    background: var(--display-bg);
+    color: var(--text-color);
+    margin-bottom: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 20px;
+}
+
+#keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+button {
+    aspect-ratio: 1/1;
+    border-radius: 20px; /* Yuvarlatılmış kare daha modern duruyor */
+    border: none;
+    background: var(--btn-bg);
+    color: var(--text-color);
+    font-size: 1.4rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover { background: var(--btn-hover); transform: translateY(-3px); }
+
+.operator-btn { background: #ff9f0a; color: white; }
+.top-btn { background: rgba(165, 165, 165, 0.3); color: var(--text-color); }
+.equal-btn { background: #34c759; color: white; }
